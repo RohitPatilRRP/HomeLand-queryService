@@ -1,0 +1,20 @@
+{
+  "name": "homeland-queryservice",
+  "version": "1.0.0",
+  "description": "Updating readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"npm server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RohitPatilRRP/HomeLand-queryService.git"
+  },
+  "author": "rohit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RohitPatilRRP/HomeLand-queryService/issues"
+  },
+  "homepage": "https://github.com/RohitPatilRRP/HomeLand-queryService#readme"
+}
