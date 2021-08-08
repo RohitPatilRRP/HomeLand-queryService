@@ -3,5 +3,5 @@ module.exports = {
     tokenKey: `homeLand`,
     getStateInfoUrl: "http://homelane-dataservice.herokuapp.com/data/Get_State_Info",
     getDateInfoUrl: "http://homelane-dataservice.herokuapp.com/data/Get_Date_Info",
-    getPinpointInfoUrl: "http://homelane-dataservice.herokuapp.com/data/Get_pinpoint_Info",
+    getPinpointInfoUrl: "http://homelane-dataservice.herokuapp.com/data/Get_Pinpoint_Info",
 }
