@@ -6,9 +6,9 @@ const User = require('../../model/user.model');
 const getDateInfo = async (req, res) => {
     try {
         let result = await fetch(config.getDateInfoUrl, {
-            method: 'post',
-            body: JSON.stringify(req.body),
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(req.body),
         });
         resutl = await result.json();
         return res.status(200).send({
