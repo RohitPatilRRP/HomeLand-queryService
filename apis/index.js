@@ -1,18 +1,17 @@
 const covidData = require('express').Router();
 const auth = require('../middleware/auth');
-const User = require('../model/user.model');
 
-covidData.get('/getUsers', auth, async (req, res) => {
-    try {
-        const result = await User.find({});
-        console.log(res);
-        return res.status(200).send({
-            code:200,
-            result
-        });
-    } catch (err) {
-        return res.status(500).send(err);
-    }
-})
+const validate = require('../middleware/joivalidator');
+const validator = require('../model/validator');
+
+const { getUsers, getDateInfo, getStateInfo, getPinpointInfo } = require('./controller/index');
+
+covidData.get('/getUseGrs', auth, getUsers);
+
+covidData.post('/Get_Date_Info', auth, validate(validator.getDateInfo), getDateInfo)
+
+covidData.post('/Get_State_Info', auth, validate(validator.getStateInfo), getStateInfo);
+
+covidData.post('/Get_Pinpoint_Info', auth, validate(validator.getPinPointInfo), getPinpointInfo);
 
 module.exports = covidData;

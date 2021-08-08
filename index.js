@@ -41,8 +41,6 @@ app.post("/login", async (req, res) => {
     }
 });
 
-app.use('/covidData/query', router);
-
-app.listen(process.env.PORT || 5000);
+app.use('/query', router);
 
 module.exports = app;
