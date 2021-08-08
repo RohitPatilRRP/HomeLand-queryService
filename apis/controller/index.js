@@ -5,15 +5,12 @@ const User = require('../../model/user.model');
 
 const getDateInfo = async (req, res) => {
     try {
-        console.log(`fetching :${config.getDateInfoUrl}`)
         let result = await fetch(config.getDateInfoUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(req.body),
         });
-        console.log(result);
         result = await result.json();
-
         return res.status(200).send({
             code: 200,
             result: result.result,
@@ -30,10 +27,10 @@ const getStateInfo = async (req, res) => {
             body: JSON.stringify(req.body),
             headers: { 'Content-Type': 'application/json' },
         });
-        resutl = await result.json();
+        result = await result.json();
         return res.status(200).send({
             code: 200,
-            result
+            result: result.result
         });
     } catch (err) {
         return res.status(500).send(err);
@@ -47,10 +44,10 @@ const getPinpointInfo = async (req, res) => {
             body: JSON.stringify(req.body),
             headers: { 'Content-Type': 'application/json' },
         });
-        resutl = await result.json();
+        result = await result.json();
         return res.status(200).send({
             code: 200,
-            result
+            result: result.result
         });
     } catch (err) {
         return res.status(500).send(err);
