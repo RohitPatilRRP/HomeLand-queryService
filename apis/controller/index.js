@@ -11,10 +11,12 @@ const getDateInfo = async (req, res) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(req.body),
         });
-        resutl = await result.json();
+        console.log(result);
+        result = await result.json();
+
         return res.status(200).send({
             code: 200,
-            result
+            result: result.result,
         });
     } catch (err) {
         return res.status(500).send(err);
